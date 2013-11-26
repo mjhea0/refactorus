@@ -1,0 +1,18 @@
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+img {
+  max-width: 210px;
+  max-height: 210px;
+  -webkit-animation-name:             rotate;
+  -webkit-animation-duration:         .75s;
+  -webkit-animation-iteration-count:  infinite;
+  -webkit-animation-timing-function:  cubic-bezier(0.5,0.5,0.5,0.5);
+}
+
