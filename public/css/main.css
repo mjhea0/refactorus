@@ -1,9 +1,9 @@
 @-webkit-keyframes rotate {
   from {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(360deg) skew(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(0deg) skew(65deg);
   }
 }
 
@@ -14,5 +14,6 @@ img {
   -webkit-animation-duration:         .75s;
   -webkit-animation-iteration-count:  infinite;
   -webkit-animation-timing-function:  cubic-bezier(0.5,0.5,0.5,0.5);
+
 }
 
