@@ -93,3 +93,249 @@
 @keyframes moveY {
   from { top: 0; } to { top: 280px; }
 }
+
+/*One-Eyed Flying Creature*/
+/*Courtesy of: http://tympanus.net/codrops/2013/05/22/examples-of-pseudo-elements-animations-and-transitions*/
+.pojoro{
+background:rgba( 255, 255, 255, 1);
+background:radial-gradient(ellipse at center, rgba(255,255,255,1) 40%,rgba(51,51,51,1) 100%);
+/*border-radius*/
+-webkit-border-radius:100%;
+   -moz-border-radius:100%;
+        border-radius:100%;
+/* box-shadow: secondary color, body, eyelash */
+-webkit-box-shadow:0 0 0 0.2em rgb(252,182,20),
+                   0 0 0.1em 0.55em rgb(234,162,17),
+                   inset 0 0.2em 0 0 rgb(247,194,99);
+   -moz-box-shadow:0 0 0 0.2em rgb(252,182,20),
+                   0 0 0.1em 0.55em rgb(234,162,17),
+                   inset 0 0.2em 0 0 rgb(247,194,99);
+        box-shadow:0 0 0 0.2em rgb(252,182,20),
+                   0 0 0.1em 0.55em rgb(234,162,17),
+                   inset 0 0.2em 0 0 rgb(247,194,99);
+
+/* ojo (eye) */
+color:rgba( 40, 40, 40, 0.8);
+line-height:1.1em;
+padding-left:0.18em;
+-webkit-font-smoothing:antialiased;
+user-select:none;
+/* usability, position and transition */
+cursor:pointer;
+position:relative;
+margin:5em auto 0 auto;
+width:1.5em;
+height:1.5em;
+/*transform-origin*/
+-webkit-transform-origin:center;
+   -moz-transform-origin:center;
+    -ms-transform-origin:center;
+     -o-transform-origin:center;
+        transform-origin:center;
+/*transition*/
+-webkit-transition:all 0.8s ease-in-out;
+   -moz-transition:all 0.8s ease-in-out;
+     -o-transition:all 0.8s ease-in-out;
+        transition:all 0.8s ease-in-out;
+/* Separate the animations to have a better control over the eye and the body */
+-webkit-animation:eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+   -moz-animation:eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+    -ms-animation:eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+     -o-animation:eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+        animation:eye 2.2s ease-in-out infinite, body 1.15s 1.8s linear infinite;
+}
+/* Elevate and distort the creature. */
+
+.pojoro:hover{
+/*transform*/
+-webkit-transform:scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);
+   -moz-transform:scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);
+    -ms-transform:scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);
+     -o-transform:scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);
+        transform:scaleY(0.9) scaleX(0.95) translateY(-3em) translateZ(0);
+}
+/* wings */
+.eyeball {
+  font-size: 70px;
+}
+.fun {
+  display: inline-block;
+  margin-left: 5px;
+  position: relative;
+  top: -260px;
+  left: -260px;
+}
+.pojoro:before,
+.pojoro:after{
+background:rgba(0,0,0,0);
+/*border-radius*/
+-webkit-border-radius:100%;
+   -moz-border-radius:100%;
+        border-radius:100%;
+content:"";
+/* display:none, hide wings */
+display:none;
+position:absolute;
+width:1em;
+height:0.1em;
+-webkit-filter:blur(1px);
+/*transition*/
+-webkit-transition:all 0.2s;
+   -moz-transition:all 0.2s;
+     -o-transition:all 0.2s;
+        transition:all 0.2s;
+/*animation-duration*/
+-webkit-animation-duration:0.2s;
+   -moz-animation-duration:0.2s;
+    -ms-animation-duration:0.2s;
+     -o-animation-duration:0.2s;
+        animation-duration:0.2s;
+/*animation-iteration-count*/
+-webkit-animation-iteration-count:infinite;
+   -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+     -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+/*animation-timing-function*/
+-webkit-animation-timing-function:ease-in-out;
+   -moz-animation-timing-function:ease-in-out;
+    -ms-animation-timing-function:ease-in-out;
+     -o-animation-timing-function:ease-in-out;
+        animation-timing-function:ease-in-out;
+}
+.pojoro:before{
+top:25%;
+left:1.45em;
+margin-left:-1em;
+/*transform-origin*/
+-webkit-transform-origin:left;
+   -moz-transform-origin:left;
+    -ms-transform-origin:left;
+     -o-transform-origin:left;
+        transform-origin:left;
+/*transform*/
+-webkit-transform:rotate(-60deg);
+   -moz-transform:rotate(-60deg);
+    -ms-transform:rotate(-60deg);
+     -o-transform:rotate(-60deg);
+        transform:rotate(-60deg);
+/*animation-name*/
+-webkit-animation-name:wings;
+   -moz-animation-name:wings;
+    -ms-animation-name:wings;
+     -o-animation-name:wings;
+        animation-name:wings;
+}
+.pojoro:after{
+top:25%;
+left:-2.2em;
+margin-left:1em;
+/*transform-origin*/
+-webkit-transform-origin:right;
+   -moz-transform-origin:right;
+    -ms-transform-origin:right;
+     -o-transform-origin:right;
+        transform-origin:right;
+/*transform*/
+-webkit-transform:rotate(60deg);
+   -moz-transform:rotate(60deg);
+    -ms-transform:rotate(60deg);
+     -o-transform:rotate(60deg);
+        transform:rotate(60deg);
+/*animation-name*/
+-webkit-animation-name:wings2;
+   -moz-animation-name:wings2;
+    -ms-animation-name:wings2;
+     -o-animation-name:wings2;
+        animation-name:wings2;
+}
+.pojoro:hover:before,
+.pojoro:hover:after{
+background:rgba(100,100,100,0.8);
+/* display:block, we allow the wings to appear and the animation starts */
+display:block;
+margin-left:0em;
+width:2em;
+height:0.3em;
+}
+@-webkit-keyframes eye{
+/* Eye movement */
+
+    5%, 10%  {
+        line-height: 1.2em;
+        padding-left: 0em;
+    }
+    15%, 20%  {
+        line-height: 1.15em;
+        padding-left: 0.4em;
+    }
+
+    /* Eyelash movement */
+
+    25%  {
+        box-shadow: 0 0 0 0.2em rgb(252,182,20),
+                    0 0 0.1em 0.55em rgb(234,162,17),
+                    inset 0 1em 0 0 rgb(247,194,99);
+    }
+    23%, 27%  {
+        box-shadow: 0 0 0 0.2em rgb(252,182,20),
+                    0 0 0.1em 0.55em rgb(234,162,17),
+                    inset 0 0.2em 0 0 rgb(247,194,99);
+    }
+}
+@-webkit-keyframes body{
+50%  {
+        width: 1.4em; height: 1.4em;
+    }
+}
+@-webkit-keyframes wings{
+50%  {
+        transform: rotate(65deg);
+    }
+}
+@-webkit-keyframes wings2{
+50%  {
+        transform: rotate(-65deg);
+    }
+}
+
+@-webkit-keyframes eye{
+/* Eye movement */
+
+    5%, 10%  {
+        line-height: 1.2em;
+        padding-left: 0em;
+    }
+    15%, 20%  {
+        line-height: 1.15em;
+        padding-left: 0.4em;
+    }
+
+    /* Eyelash movement */
+
+    25%  {
+        box-shadow: 0 0 0 0.2em rgb(252,182,20),
+                    0 0 0.1em 0.55em rgb(234,162,17),
+                    inset 0 1em 0 0 rgb(247,194,99);
+    }
+    23%, 27%  {
+        box-shadow: 0 0 0 0.2em rgb(252,182,20),
+                    0 0 0.1em 0.55em rgb(234,162,17),
+                    inset 0 0.2em 0 0 rgb(247,194,99);
+    }
+}
+@-webkit-keyframes body{
+50%  {
+        width: 1.4em; height: 1.4em;
+    }
+}
+@-webkit-keyframes wings{
+50%  {
+        transform: rotate(65deg);
+    }
+}
+@-webkit-keyframes wings2{
+50%  {
+        transform: rotate(-65deg);
+    }
+}
